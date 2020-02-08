@@ -39,5 +39,6 @@ screenshot
 
 # python
 .pyc
+__pycache__
 
 build
