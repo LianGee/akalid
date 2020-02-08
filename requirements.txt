@@ -22,7 +22,6 @@ decorator==4.4.0
 defusedxml==0.5.0
 entrypoints==0.3
 ephem==3.7.6.0
-fbprophet==0.4.post2
 Flask==1.0.2
 Flask-AppBuilder==1.12.2
 Flask-Babel==0.12.2
