@@ -4,8 +4,7 @@
 # @Author: zaoshu
 # @Date  : 2020-02-07
 # @Desc  :
-import math
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from common.log import Logger
 from model.app.china_summary import ChinaSummary
@@ -58,19 +57,16 @@ class SummaryService(SummaryServiceApi):
         return world
 
     @classmethod
-    def china_summary(cls, start, end):
-        if start is None and end is None:
-            now = datetime.now()
-            end = math.floor(now.timestamp())
-            now += timedelta(days=-1)
-            start = math.floor(now.replace(hour=23, minute=59, second=59, microsecond=0).timestamp())
+    def china_summary(cls, date):
+        if date is None:
+            date = datetime.now().strftime('%Y%m%d')
         provinces = Province.select() \
-            .filter(Province.country == '中国', Province.created_at.between(start, end)) \
+            .filter(Province.country == '中国', Province.date == date) \
             .order_by(Province.confirmed.asc()) \
             .all()
         province_names = [province.province_name for province in provinces]
         cities = City.select() \
-            .filter(City.province_name.in_(province_names), City.created_at.between(start, end)) \
+            .filter(City.province_name.in_(province_names), City.date == date) \
             .order_by(City.confirmed.asc()) \
             .all()
         china_summary = ChinaSummary(

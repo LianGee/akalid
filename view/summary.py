@@ -15,9 +15,8 @@ summary_bp = Blueprint('summary', __name__)
 
 @summary_bp.route('/china', methods=['GET'])
 def summary_china():
-    start = request.args.get('start')
-    end = request.args.get('end')
-    return Response.success(SummaryService.china_summary(start, end))
+    date = request.args.get('date')
+    return Response.success(SummaryService.china_summary(date))
 
 
 @summary_bp.route('/china/daily', methods=['GET'])

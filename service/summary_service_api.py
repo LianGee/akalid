@@ -11,7 +11,7 @@ class SummaryServiceApi(metaclass=ABCMeta):
 
     @classmethod
     @abstractmethod
-    def china_summary(cls, start, end):
+    def china_summary(cls, date):
         raise NotImplementedError()
 
     @classmethod
