@@ -44,7 +44,7 @@ class HttpUtil:
                 headers=self.headers
             )
         if response is None or response.status_code not in HttpCode.HTTP_SUCCESS:
-            raise ServerException(ErrorCode.Failed, f'request failed{response.json()}')
+            raise ServerException(ErrorCode.FAILED, f'request failed{response.json()}')
         return response
 
     def get(self):

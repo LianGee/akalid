@@ -103,3 +103,5 @@ Werkzeug==0.15.3
 widgetsnbextension==3.4.2
 WTForms==2.2.1
 zipp==2.2.0
+XlsxWriter==1.1.7
+

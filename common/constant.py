@@ -7,9 +7,19 @@
 
 
 class ErrorCode:
-    Success = 0
-    Failed = 500
+    SUCCESS = 0
+    FAILED = 500
 
 
 class HttpCode:
     HTTP_SUCCESS = [201, 200]
+
+
+class Symptom:
+    CODE = {
+        0: '发热',
+        1: '咳嗽',
+        2: '验证',
+        3: '其他',
+        4: '疑似感染'
+    }

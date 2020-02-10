@@ -7,10 +7,10 @@
 
 
 class ServerException(Exception):
-    class ServerException(Exception):
-        def __init__(self, code, msg):
-            self.msg = msg
-            self.code = code
+    def __init__(self, code, msg):
+        self.msg = msg
+        self.code = code
 
-        def __str__(self):
-            return f'{self.msg}'
+    def __str__(self):
+        return f'{self.msg}'
+

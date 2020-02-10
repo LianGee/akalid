@@ -5,8 +5,10 @@ from flask import Flask, request
 import config
 from common.log import Logger
 from common.response import Response
+from view.daily import daily_bp
 from view.summary import summary_bp
-from view.sync_api import sync_bp
+from view.sync import sync_bp
+from view.user import user_bp
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -14,6 +16,8 @@ log = Logger(__name__)
 
 app.register_blueprint(sync_bp, url_prefix='/sync')
 app.register_blueprint(summary_bp, url_prefix='/summary')
+app.register_blueprint(user_bp, url_prefix='/user')
+app.register_blueprint(daily_bp, url_prefix='/daily')
 
 
 @app.route('/')

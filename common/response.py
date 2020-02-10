@@ -27,11 +27,11 @@ class Response:
         return data
 
     @staticmethod
-    def success(data, status=ErrorCode.Success, msg=None):
+    def success(data, status=ErrorCode.SUCCESS, msg=None):
         response = Response(status=status, msg=msg, data=Response.convert_data(data))
         return jsonify(response.__dict__)
 
     @staticmethod
-    def failed(msg, status=ErrorCode.Failed, data=None):
+    def failed(msg, status=ErrorCode.FAILED, data=None):
         response = Response(status=status, msg=msg, data=data)
         return jsonify(response.__dict__)

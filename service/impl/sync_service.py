@@ -109,5 +109,5 @@ class SyncService(SyncServiceApi):
 
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(SyncService.sync, trigger='interval', minutes=1, id='sync')
+scheduler.add_job(SyncService.sync, trigger='interval', minutes=5, id='sync')
 scheduler.start()

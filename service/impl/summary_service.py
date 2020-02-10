@@ -98,9 +98,7 @@ class SummaryService(SummaryServiceApi):
             china_summary.dead += province.dead
             china_summary.suspected += province.suspected
             china_summary.province_level[province.short_name] = cls.summary_section(province.confirmed)
-            log.info(f'{province.province_name} has {len(city_map.get(province.province_name, []))} cities')
         china_summary.cities = city_map
-        log.info(f'total provinces {len(provinces)}')
         return china_summary
 
     @classmethod
