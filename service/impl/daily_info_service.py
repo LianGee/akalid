@@ -70,7 +70,7 @@ class DailyInfoService:
                 'in_sh': '是' if daily_info.in_sh else '否', 'health': '健康' if daily_info.health else '异常',
                 'symptom': ','.join([Symptom.CODE.get(symptom, '') for symptom in json.loads(daily_info.symptom)]),
                 'chinese_name': user_map.get(daily_info.name).chinese_name,
-                'is_inner_staff': user_map.get(daily_info.name).is_inner_staff,
+                'is_inner_staff': '是' if user_map.get(daily_info.name).is_inner_staff else '否',
                 'location': user_map.get(daily_info.name).location,
                 'contact_history': '有' if daily_info.contact_history else '无',
                 'access_public': '是' if daily_info.access_public else '否',
