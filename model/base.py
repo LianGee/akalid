@@ -32,7 +32,6 @@ class BaseModel:
     def update(self, *args, **kwargs):
         session = self.get_session()
         try:
-            session.update(self)
             session.commit()
         finally:
             session.close()
