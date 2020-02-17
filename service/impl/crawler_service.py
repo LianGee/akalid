@@ -37,6 +37,6 @@ class CrawlerService:
         now = datetime.now().strftime('%Y-%m-%d_%H')
         log.info(f"{'--' * 20}starting {now}{'--' * 20}")
         f = open(f"./data/{now}.json", 'w')
-        f.write(values[1].contents[0])
-        log.info(json.loads(values[1].contents[0]))
+        f.write(values[0].contents[0])
+        log.info(json.loads(values[0].contents[0]))
         log.info(f"{'--' * 20}{now} done{'--' * 20}")

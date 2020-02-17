@@ -31,7 +31,7 @@ class SyncService(SyncServiceApi):
         if not os.path.exists(file_name):
             CrawlerService.crawler()
         raw_data = json.load(open(file_name, 'r'))
-        data = raw_data['initialState']['nCoV2019']['trends']
+        data = raw_data['nCoV2019']
         date = datetime.now().strftime('%Y%m%d')
         world = World(
             date=date,

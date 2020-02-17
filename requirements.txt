@@ -4,3 +4,4 @@ requests==2.21.0
 pandas==0.25.0
 Flask==1.0.2
 beautifulsoup4==4.8.2
+MySQL-connector-python==8.0.19
