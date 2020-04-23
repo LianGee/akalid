@@ -48,5 +48,6 @@ __pycache__
 # data
 *.xlsx
 
+*.json
 
 build
